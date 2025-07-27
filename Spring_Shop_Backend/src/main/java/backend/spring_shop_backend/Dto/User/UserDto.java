@@ -1,4 +1,4 @@
-package backend.spring_shop_backend.Dto;
+package backend.spring_shop_backend.Dto.User;
 
 import backend.spring_shop_backend.Entity.User.User;
 import lombok.AllArgsConstructor;
