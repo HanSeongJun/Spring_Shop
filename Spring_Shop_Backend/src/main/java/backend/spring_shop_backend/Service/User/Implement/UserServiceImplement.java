@@ -1,6 +1,6 @@
 package backend.spring_shop_backend.Service.User.Implement;
 
-import backend.spring_shop_backend.Dto.User.SignUpRequest;
+import backend.spring_shop_backend.Dto.Request.Auth.SignUpRequestDto;
 import backend.spring_shop_backend.Dto.User.UserDto;
 import backend.spring_shop_backend.Entity.User.User;
 import backend.spring_shop_backend.Repository.User.UserRepository;
@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class UserServiceImplement implements UserService, UserDetailsService {
     }
 
     @Override
-    public UserDto registerUser(SignUpRequest request) {
+    public UserDto registerUser(SignUpRequestDto request) {
 
         // 이메일 중복 체크
         if (userRepository.existsByEmail(request.getEmail())) {
